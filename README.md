@@ -1,4 +1,4 @@
-# Study Buddy — Backend (session 5)
+# Study Buddy — Backend
 
 Chatbot tuteur **Python débutant** : conversations persistées, rôle custom `note`, prompt système dédié, streaming SSE, choix de modèle côté client (validé serveur).
 
@@ -74,7 +74,7 @@ Réponse `text/event-stream` :
 
 Justification : une note est un mémo privé de l'étudiant (rappels, indices personnels). L'injecter dans le prompt polluerait le contexte pédagogique et pourrait faire réagir le modèle à du contenu non destiné au dialogue.
 
-Le rôle `system-notification` (tous les 10 messages de dialogue) est également filtré, comme en session 4.
+Le rôle `system-notification` (tous les 10 messages de dialogue) est également filtré.
 
 ## Prompt système
 
@@ -82,7 +82,7 @@ Fichier dédié : [`prompts/system.md`](prompts/system.md) (chargé au démarrag
 
 ### Fiche de test (ancien vs nouveau prompt)
 
-Ancien prompt (session 4) : *« Tu es Study Buddy, un tuteur bienveillant pour les étudiants. Réponds aux questions de manière claire et concise. »*
+Ancien prompt : *« Tu es Study Buddy, un tuteur bienveillant pour les étudiants. Réponds aux questions de manière claire et concise. »*
 
 Nouveau prompt : [`prompts/system.md`](prompts/system.md). Tests réalisés avec `openai/gpt-4o-mini` (script `scripts/run_prompt_tests.py`).
 
