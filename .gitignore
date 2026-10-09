@@ -14,3 +14,6 @@ wheels/
 
 # SQLite database
 *.db
+
+# Local prompt test dumps
+prompt_test_results.json

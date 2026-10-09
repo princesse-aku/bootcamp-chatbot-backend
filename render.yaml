@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: study-buddy-backend
+    runtime: python
+    plan: free
+    buildCommand: pip install uv && uv sync && uv run alembic upgrade head
+    startCommand: uv run uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: RODIUMAI_API_KEY
+        sync: false
+      - key: ALLOWED_MODELS
+        value: openai/gpt-4o-mini,anthropic/claude-sonnet-4-5-20250929
+      - key: DEFAULT_MODEL
+        value: openai/gpt-4o-mini
+      - key: CORS_ORIGINS
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite:///chat.db
